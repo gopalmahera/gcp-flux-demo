@@ -2,9 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx-deployment
-  namespace: test
-  labels:
-    app: nginx
+  namespace: test  # Ensure this matches your PVC namespace
 spec:
   replicas: 1
   selector:
@@ -20,6 +18,14 @@ spec:
         image: nginx:latest
         ports:
         - containerPort: 80
+        volumeMounts:
+        - mountPath: /usr/share/nginx/html  # Path where the volume will be mounted
+          name: nginx-storage
+      volumes:
+      - name: nginx-storage
+        persistentVolumeClaim:
+          claimName: nginx-pvc  # Name of the PVC created earlier
+
 
 ---
 apiVersion: v1
