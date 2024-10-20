@@ -12,9 +12,7 @@ prometheus:
         memory: 512Mi
 
 grafana:
-  admin:
-    enabled: true
-    password: admin  # Replace with your desired password
+  adminPassword: Admin@Dozee  # Replace with your desired password
 
   service:
     type: ClusterIP
