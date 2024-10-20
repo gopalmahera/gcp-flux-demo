@@ -1,4 +1,25 @@
 
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: bitnami
+  namespace: flux-system
+spec:
+  interval: 1440m
+  url: https://charts.bitnami.com/bitnami
+
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: keda
+  namespace: flux-system
+spec:
+  interval: 1440m
+  url: https://kedacore.github.io/charts
+
+---
 apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: HelmRepository
 metadata:
@@ -18,4 +39,62 @@ spec:
   interval: 1440m
   url: https://grafana.github.io/helm-charts
 
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: confluentinc
+  namespace: flux-system
+spec:
+  interval: 1440m
+  url: https://packages.confluent.io/helm
 
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: flagger
+  namespace: flux-system
+spec:
+  interval: 1440m
+  url: https://flagger.app
+
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: podinfo
+  namespace: flux-system
+spec:
+  interval: 1440m
+  url: https://stefanprodan.github.io/podinfo
+
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: emqx
+  namespace: flux-system
+spec:
+  interval: 1440m
+  url: https://repos.emqx.io/charts
+
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: openobserve
+  namespace: flux-system
+spec:
+  interval: 1440m
+  url: https://charts.openobserve.ai
+
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: redash
+  namespace: flux-system
+spec:
+  interval: 1440m
+  url: https://getredash.github.io/contrib-helm-chart
