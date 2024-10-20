@@ -13,7 +13,9 @@ prometheus:
 
 grafana:
   admin:
-    existingSecret: grafana-admin
+    enabled: true
+    password: admin  # Replace with your desired password
+
   service:
     type: ClusterIP
     port: 80
